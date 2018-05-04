@@ -1,0 +1,29 @@
+﻿@using BTVeNha.Models
+@model IEnumerable<Customer>
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table table-striped">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Date</td>
+        <td>Address</td>
+        <td>Email</td>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Date.ToShortDateString()</td>
+            <td>@item.Address</td>
+            <td>@item.Email</td>
+            <td><a href="@Url.Action("ViewDetailCustomer", "Customer", new { @id=item.Id})" class="btn btn-danger"><i class="glyphicon glyphicon-eye-open"></i></a></td>
+
+        </tr>
+    }
+</table>
+

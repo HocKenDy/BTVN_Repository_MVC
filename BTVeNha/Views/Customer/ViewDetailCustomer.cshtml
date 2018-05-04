@@ -1,0 +1,27 @@
+﻿@using BTVeNha.Models
+@{
+    ViewBag.Title = "ViewDetailCustomer";
+}
+@{ 
+    Customer cus = ViewBag.Customer as Customer;
+}
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Date</td>
+            <td>Address</td>
+            <td>Email</td>
+        </tr>
+        <tr>
+            <td>@cus.Id</td>
+            <td>@cus.Name</td>
+            <td>@cus.Date.ToShortDateString()</td>
+            <td>@cus.Address</td>
+            <td>@cus.Email</td>
+        </tr>
+
+    </table>
+</div>
+
